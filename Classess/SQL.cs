@@ -766,7 +766,7 @@ namespace CIV.Classess
             sb.Append("                               where status = 1  ");
             sb.Append(" and datePart(month,print_date) = datePart(month,getdate()) ");
             sb.Append(" and datePart(yyyy,print_date) = datePart(yyyy,getdate()) ");
-            sb.AppendFormat("{0}", sqlScript);
+            sb.AppendFormat("{0})", sqlScript);
            
             DataSet ds = new DataSet();
 
@@ -1396,7 +1396,8 @@ AS */
             sb.Append("     sum(case when l.mag_code = 'C' then amount else 0.0 end) civ,   ");
             sb.Append("     sum(case when l.mag_code = 'J' then amount else 0.0 end) jc, ");
             sb.Append("     sum(case when l.mag_code = 'K' then amount else 0.0 end) kv,  ");
-            sb.Append("     sum(case when l.mag_code = 'M' then amount else 0.0 end) mjk  ");
+            sb.Append("     sum(case when l.mag_code = 'H' then amount else 0.0 end) mjk,  ");
+            sb.Append("     sum(case when l.mag_code = 'M' then amount else 0.0 end) kj  ");
             sb.Append(" from ");
             sb.Append("     receipts r,   ");
             sb.Append("     languages l  ");
@@ -1427,7 +1428,8 @@ AS */
             sb.Append("     sum(case when l.mag_code = 'C' then 1 else 0 end) civ,   ");
             sb.Append("     sum(case when l.mag_code = 'J' then 1 else 0 end) jc, ");
             sb.Append("     sum(case when l.mag_code = 'K' then 1 else 0 end) kv,  ");
-            sb.Append("     sum(case when l.mag_code = 'M' then 1 else 0 end) mjk  ");
+            sb.Append("     sum(case when l.mag_code = 'H' then 1 else 0 end) mjk,  ");
+            sb.Append("     sum(case when l.mag_code = 'M' then 1 else 0 end) kj  ");
             sb.Append(" from ");
             sb.Append("     subscribers s,   ");
             if (machineType.ToUpper().Equals("LOCAL"))
@@ -1597,6 +1599,7 @@ AS */
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
+                cmd.CommandTimeout = 360;
 
                 cmd.ExecuteNonQuery();
             }

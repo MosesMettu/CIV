@@ -12,7 +12,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LEFI")]
 [assembly: AssemblyProduct("Magazine Manager")]
-[assembly: AssemblyCopyright("2008 LEFI")]
+[assembly: AssemblyCopyright("2013 LEFI")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 
@@ -27,7 +27,7 @@ using System.Resources;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("2.2.0.0")]
+[assembly: AssemblyVersion("2.1.1.1")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 

@@ -712,9 +712,8 @@ namespace CIV
                     if (!chkBoxPrep.Checked)
                     {
                         // ********* Comment for changes on 25.05.2021  *************
-                        /*
                         
-						if (!magazine[0].ToUpper().Contains("MRITUNJAY"))
+                        if (!magazine[0].ToUpper().Contains("MRITUNJAY"))
                         {
                             st1 = "Licenced to post without prepayment";
                             sb.Append(" " + st1);
@@ -734,7 +733,7 @@ namespace CIV
                                 sb.Append(" ");
                             sb.Append(st1 + (char)10);
 
-                            st1 = "On " + label3.Text;
+                            // st1 = "On " + label3.Text;            // Comment because to avoid printing date
                             sb.Append("              " + st1);
                             for (int j = st1.Length; j < 44; j++)
                                 sb.Append(" ");
@@ -748,10 +747,9 @@ namespace CIV
                             sb.Append( " " + (char)10 + (char)10 + (char)10 + (char)10);
                         }
                         
-                        */
-						
+                        
                         // ***** New changes on 25.05.2021 ********//
-                        sb.Append( " " + (char)10 + (char)10 + (char)10 + (char)10);
+                        // sb.Append( " " + (char)10 + (char)10 + (char)10 + (char)10);
 
 
                         st1 = "If undelivered please return to";

@@ -109,6 +109,12 @@ namespace CIV
                 cs.Width = 150;
                 dgvReceipts.Columns.Add(cs);
 
+                cs = new DataGridViewTextBoxColumn();
+                cs.DataPropertyName = "kj";
+                cs.HeaderText = "Kristhu Jedhav";
+                cs.Width = 150;
+                dgvReceipts.Columns.Add(cs);
+
                 DataTable oTable = SQL.RevenueReportGetRecs(dtpStart.Value, dtpEnd.Value, cboMagazine.SelectedValue.ToString(), machingType).Tables[0];
                 dgvReceipts.DataSource = oTable;
                 TurnOnRuntBtn();

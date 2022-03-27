@@ -84,6 +84,11 @@ namespace CIV
                 cs.Width = 150;
                 dgvReceipts.Columns.Add(cs);
 
+                cs = new DataGridViewTextBoxColumn();
+                cs.DataPropertyName = "kj";
+                cs.HeaderText = "Kristhu Jedhav";
+                cs.Width = 150;
+                dgvReceipts.Columns.Add(cs);
                 
                 dgvReceipts.DataSource = oTable;
                
